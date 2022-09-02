@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第 2 回 プログラミング基礎 1 &#8212; ソフトウェアデザイン</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="第 3 回 プログラミング基礎 2" href="03_programming2.html" />
+    <link rel="prev" title="第 1 回 授業ガイダンス" href="01_guide.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="ja">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">ソフトウェアデザイン</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="この本を検索..." aria-label="この本を検索..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   はじめに
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python セットアップ
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_environment/00_environment.html">
+   Python をセットアップする
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_environment/01_editor.html">
+   テキストエディタ
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  ソフトウェアデザイン講義
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_guide.html">
+   第 1 回 授業ガイダンス
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   第 2 回 プログラミング基礎 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_programming2.html">
+   第 3 回 プログラミング基礎 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_programming3.html">
+   第 4 回 プログラミング基礎 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_data_structure_and_algorithm1.html">
+   第 5 回 データ構造とアルゴリズム 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_data_structure_and_algorithm2.html">
+   第 6 回 データ構造とアルゴリズム 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_data_structure_and_algorithm3.html">
+   第 7 回 データ構造とアルゴリズム 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_programming_language_introduction1.html">
+   第 8 回 プログラミング言語入門 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_programming_language_introduction2.html">
+   第 9 回 プログラミング言語入門 2 字句解析
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10_programming_language_introduction3.html">
+   第 10 回 プログラミング言語入門 3 構文解析
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_programming_language_introduction4.html">
+   第 11 回 プログラミング言語入門 4 意味解析
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_lisp1.html">
+   第 12 回 プログラミング言語 Lisp を作る 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13_lisp2.html">
+   第 13 回 プログラミング言語 Lisp を作る 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14_lisp3.html">
+   第 14 回 プログラミング言語 Lisp を作る 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15_lisp4.html">
+   第 15 回 プログラミング言語 Lisp を作る 4
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="ナビゲーションを切り替え" aria-controls="site-navigation"
+                title="ナビゲーションを切り替え" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="このページをダウンロード"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/01_software_design/02_programming1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="ソースファイルをダウンロード" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="PDFに印刷"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="ソースリポジトリ"><i
+                    class="fab fa-github"></i>リポジトリ</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fbook/01_software_design/02_programming1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="問題を開く"><i class="fas fa-lightbulb"></i>未解決の問題</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全画面モード"
+        title="全画面モード"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 目次
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   学び始めに
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   変数
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   制御構文
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     条件分岐
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>第 2 回 プログラミング基礎 1<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>プログラミング言語 Python の基礎構文を学びます。変数、制御構文、関数、クラスを学びます。</p>
+<div class="section" id="id2">
+<h2>学び始めに<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>本資料ではプログラムの一部分のみを記述したり、全てを記述したり様々な表現を行ないます。<br />
+ファイル名が記載されている場合は、丸々動作するものとして、ファイル名が記載されていない場合は一部分の記載と思ってください。</p>
+<p>また、一部分の場合でも実行できるプログラムである場合はありますし、単純にコピーだけでは動作しない場合でもどうすれば動作するかを考えて自分で動作を確認するようにしてください。</p>
+<p>また、インタープリタで実行する場合の記法には慣れてください。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; &#39;Hello World!&#39;
+Hello World!
+</pre></div>
+</div>
+<p>上記のように、<code class="docutils literal notranslate"><span class="pre">&gt;</span></code> が行頭に記載されている場合はインタープリタでの実行を前提にしています。<br />
+その場合、次の行に記載されている文字列は一行前の実行結果 (戻り値) となります。</p>
+</div>
+<div class="section" id="id3">
+<h2>変数<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>よくあるプログラミングを始める時の定番のプログラムがあります。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>このプログラムを実行すると、ターミナルに Hello World! と出力されます。<br />
+このプログラムは print 関数と 'Hello World!' という文字列から構成されています。</p>
+<p>もし、下記のような出力を作りたい場合、どうするかを考えてみます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hello World!
+Hello World!
+Hello World!
+</pre></div>
+</div>
+<p>この出力を作るプログラムは単純に考えれば下記のようになります。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>プログラムが 3 行畫かれています。プログラムが複数行畫かれている時の読み方は、1 番上から順番に 1 行ずつ読んでいく事です。特殊な場合だけこの規則と異なる読み方をする事になりますが、それは都度説明するので今は上から読むとだけ覚えてください。</p>
+<p>今回の要件では、出力が一緒であれば良いため、このプログラムでも問題はありません。<br />
+ただ、もし <code class="docutils literal notranslate"><span class="pre">World!</span></code> の部分を <code class="docutils literal notranslate"><span class="pre">Japan</span></code> に変更したい場合は 3 箇所変更する必要がでてきます。</p>
+<p>次のように変数を利用すれば、1 箇所変更するのみで全ての実行内容を変更する事が可能になります。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="o">=</span> <span class="s1">&#39;Hello world!&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hello World!
+Hello World!
+Hello World!
+</pre></div>
+</div>
+<p>変数はプログラムに状態を記憶させる事ができるため、定義した内容を何度も再利用する事ができます。<br />
+これは変数を使うメリットです。変数を使わない場合は全て直接記述する必要があり、変更したい部分を全て修正しないといけないのは非常に不便です。</p>
+<p>こういった色々な部分に同じ内容を記載している場合に変数などを利用してまとめる事を「共通化」と言います。<br />
+共通化はプログラミングにおいて読み易いプログラムや、バグの少ないプログラムを畫くために重要な考え方なので意識するようにしましょう。</p>
+<p>また、変数の使い方は共通化だけではなく、先程でてきた「記憶」させる事も重要な使い方となります。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span>
+</pre></div>
+</div>
+<p>少しチープなプログラムですが数を 1 つずつ数え上げていくプログラムを書いてみました。<br />
+変数を使わない場合、このような書き方はできません。</p>
+<p>直接 <code class="docutils literal notranslate"><span class="pre">6</span></code> を print に与え、表示する事はできますが、プログラムが計算していく事によって結果的に計算した数を出すという事が不可能だという話です。</p>
+<p>後ででてくる制御構文や関数、クラスを組み合わせる事でどのように利用していくのか、イメージできるようになります。</p>
+</div>
+<div class="section" id="id4">
+<h2>制御構文<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>制御構文とは、プログラムを制御するための構文の事をさします。</p>
+<p>Python では条件分岐は if 文、繰り返しは for 文か while 文を利用します。</p>
+<div class="section" id="id5">
+<h3>条件分岐<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>条件分岐である if 文は下記のように利用します。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 == 1 は True です&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上記の if 文は 1 が 1 と等価であるという意味です。この条件が真 (Python の真は True) である時に <code class="docutils literal notranslate"><span class="pre">print('1</span> <span class="pre">==</span> <span class="pre">1</span> <span class="pre">は</span> <span class="pre">True</span> <span class="pre">です')</span></code> を実行する事になります。</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">1</span> <span class="pre">==</span> <span class="pre">1:</span></code> が if 文の条件部分になります。</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> </code> if の後のスペースは必ず半角にしてください。プログラム中のスペース (空白文字) は全て半角である必要があります。全角が許されるのは文字列の中 (' とか &quot; で挟んでいる文字のこと) の場合のみとなります。<br />
+また、条件文の記述の終わりを示すのは <code class="docutils literal notranslate"><span class="pre">:</span></code> コロンです。</p>
+<p><code class="docutils literal notranslate"><span class="pre">:</span></code> は文の区切りに使われるため、今後も頻繁に使います。</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> </code> <code class="docutils literal notranslate"><span class="pre">:</span></code> の間に記述されている <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">==</span> <span class="pre">1</span></code> は式となります。この式の結果が <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> で判断されます。<br />
+この式というものが評価 (計算) されると bool で表現されます (<code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>)。</p>
+<p><code class="docutils literal notranslate"><span class="pre">==</span></code> は比較演算子といい、左辺と右辺が等価であるかを評価します。つまり <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">==</span> <span class="pre">1</span></code> は、1 は 1 と同じ値か? という意味になります。<br />
+1 は 1 であるため、結果は真 (<code class="docutils literal notranslate"><span class="pre">True</span></code>) になります。もし、左辺か右辺が 2 だった場合 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">==</span> <span class="pre">2</span></code> とかだと 1 は 2 ではないため、<code class="docutils literal notranslate"><span class="pre">False</span></code> になります。</p>
+<p>条件式が <code class="docutils literal notranslate"><span class="pre">False</span></code> になった場合、その条件分岐の中には入らず無視されます。<br />
+今回のプログラムでいえば、<code class="docutils literal notranslate"><span class="pre">print('1</span> <span class="pre">==</span> <span class="pre">1</span> <span class="pre">は</span> <span class="pre">Trueです')</span></code> が実行されず、無視されるという事です。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> の位置がちょっとずれているように記載されていますが、これは間違いではありません。<br />
+Python のプログラムでは、文と呼ばれるものは繋りを示す方法として、インデント (字下げ) という方法を用いています。<br />
+インデントは、プログラムの行の開始位置を後ろに下げる事をいいます。<br />
+半角スペースかタブ文字でインデントを付ける事ができますが、インデントに使う事ができる文字と文字数はプログラムの中で最初に使ったもので統一する必要があるため、自分の中でルールを決めて畫く事をオススメします。<br />
+私のオススメはスペース 2 個です。</p>
+</div>
+<p>もし無視されず、必ず何か処理をしたいと思う場合にももちろん対応できます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 == 1 は True です&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 == 1 は False です&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">else:</span></code> を追加しました。<code class="docutils literal notranslate"><span class="pre">else</span></code> は全ての条件にあてはまるという意味になります。<br />
+そのため、<code class="docutils literal notranslate"><span class="pre">if</span></code> で記述した条件が <code class="docutils literal notranslate"><span class="pre">True</span></code> にならなかった場合、次の行、次の行と条件を確認していき、<code class="docutils literal notranslate"><span class="pre">else</span></code> が登場するまで <code class="docutils literal notranslate"><span class="pre">True</span></code> にならなかった場合、<code class="docutils literal notranslate"><span class="pre">else</span></code> の内容が実行される事になります。</p>
+<p>ただ、今回の条件の場合は <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">==</span> <span class="pre">1</span></code> のため条件が <code class="docutils literal notranslate"><span class="pre">False</span></code> にならない為、何度実行しても <code class="docutils literal notranslate"><span class="pre">else</span></code> は実行されません。動作確認のために <code class="docutils literal notranslate"><span class="pre">False</span></code> になる条件に変えてみます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 == 1 は True です&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 == 2 は False です&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>実際にこのような条件式を畫く事はありませんが、実験で書いてみました。<br />
+このプログラムを実行すると、<code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">==</span> <span class="pre">2</span> <span class="pre">は</span> <span class="pre">False</span> <span class="pre">です</span></code> と表示されます。</p>
+<p>2 パターンしか分岐できないのは不便なので、当然もっと細かく制御できます。<br />
+<code class="docutils literal notranslate"><span class="pre">if</span></code> ~ <code class="docutils literal notranslate"><span class="pre">else</span></code> までの間に、<code class="docutils literal notranslate"><span class="pre">elif</span></code> を利用する事で、細かく分岐を作る事が可能です。</p>
+<p>ついでに、<code class="docutils literal notranslate"><span class="pre">if</span></code> の時の条件制御が固定の値で続いているので梃 (てこ) 入れします。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;数字 1 ~ 3 のどれかを入力してください：&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;入力された数字は 1 です&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">num</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;入力された数字は 2 です&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">num</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;入力された数字は 3 です&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;求めている数字が入力されませんでした&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>input() は input 関数といい、プログラムを実行した際に入力を受け付ける関数です。
+引数に与えた文字列がある場合、入力を求める際に与えた文字列が出力されます。
+要するに、どんな入力をして欲しいのか、先に問い掛けを表示できるという訳です。</p>
+</div>
+<p>input を使用して num 変数が固定されない状況ができました。ついに変数が活用されて、if 文が活きてきます。</p>
+<p>今回は <code class="docutils literal notranslate"><span class="pre">elif</span></code> によって条件とその際の処理を追加しました。ただ、少し今までとの違いに気付いて欲しいのですが、数字の比較が少し変わっています。</p>
+<p>左辺が変数になったのは数字の変わりに変数をおいたので理解できますが、右辺が <code class="docutils literal notranslate"><span class="pre">'1'</span></code> のように文字として扱われています。これは、<code class="docutils literal notranslate"><span class="pre">input</span></code> によって入力された内容が全て文字列になるからです。</p>
+<p>そのため、input の結果を数値に変換して num に代入するか、比較する際に数値ではなく、文字として比較する必要があります。注意してください。</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/01_software_design"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="01_guide.html" title="前へ ページ">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">前へ</p>
+            <p class="prev-next-title">第 1 回 授業ガイダンス</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03_programming2.html" title="次へ ページ">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">第 3 回 プログラミング基礎 2</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          <div class="extra_footer">
+            © Copyright 2021 by 株式会社coroutine
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
